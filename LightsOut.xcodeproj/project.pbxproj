@@ -13,7 +13,7 @@
 		8333854D1CD293890084FF02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8333854C1CD293890084FF02 /* Assets.xcassets */; };
 		833385501CD293890084FF02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8333854E1CD293890084FF02 /* LaunchScreen.storyboard */; };
 		833385551CD293890084FF02 /* LightsOut WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 833385541CD293890084FF02 /* LightsOut WatchKit App.app */; };
-		8333855B1CD293890084FF02 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 833385591CD293890084FF02 /* Interface.storyboard */; };
+		8333855B1CD293890084FF02 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 833385591CD293890084FF02 /* Interface.storyboard */; settings = {ASSET_TAGS = (button1, ); }; };
 		8333855D1CD293890084FF02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8333855C1CD293890084FF02 /* Assets.xcassets */; };
 		833385641CD293890084FF02 /* LightsOut WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 833385631CD293890084FF02 /* LightsOut WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		833385691CD293890084FF02 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833385681CD293890084FF02 /* InterfaceController.swift */; };
@@ -216,6 +216,9 @@
 		8333853A1CD293890084FF02 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					button1,
+				);
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Ganbaru Games";
