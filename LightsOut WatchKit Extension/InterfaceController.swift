@@ -14,6 +14,7 @@ class InterfaceController: WKInterfaceController {
 
     var buttons: Array<WKInterfaceButton>!
     var state: Array<Bool> = Array.init(count: 16, repeatedValue: false)
+    let gridSize: Int = 4
 
     @IBOutlet var button1: WKInterfaceButton!
     @IBOutlet var button2: WKInterfaceButton!
@@ -82,8 +83,25 @@ class InterfaceController: WKInterfaceController {
     }
 
     func handleButtonPress(index: Int) {
-        print(index)
+        swapPolarity(index)
 
+        // Reverse polarity of neighbors
+        for neighborIndex in [index - gridSize, index - 1, index + 1, index + gridSize] {
+            if neighborIndex >= state.startIndex && neighborIndex < state.endIndex {
+                swapPolarity(neighborIndex)
+            }
+        }
+
+        if checkForWin() {
+            // show "u won, bro" msg
+            presentControllerWithName("Win", context: nil)
+
+            resetState()
+            generateRandomPuzzle()
+        }
+    }
+
+    func swapPolarity(index: Int) {
         let button: WKInterfaceButton = buttons[index]
         let buttonState: Bool = state[index]
 
@@ -96,11 +114,42 @@ class InterfaceController: WKInterfaceController {
         state[index] = !state[index] // reverse polarity!
     }
 
+    // check if all state elements === false
+    func checkForWin() -> Bool {
+        var success: Bool = true
+        for value in state {
+            if value {
+                success = false
+            }
+        }
+        return success
+    }
+
+    func resetState() {
+        for (index, _) in state.enumerate() {
+            state[index] = false
+            let button: WKInterfaceButton = buttons[index]
+            button.setBackgroundColor(UIColor.darkGrayColor())
+        }
+    }
+
+    func generateRandomPuzzle() {
+        for (index, _) in state.enumerate() {
+            if arc4random_uniform(2) == 1 {
+                state[index] = true
+                let button: WKInterfaceButton = buttons[index]
+                button.setBackgroundColor(UIColor.magentaColor())
+            }
+        }
+    }
+
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         
         // Configure interface objects here.
         buttons = Array.init(arrayLiteral: button1, button2, button3, button4, button5, button6, button7, button8, button9, button10, button11, button12, button13, button14, button15, button16)
+
+        generateRandomPuzzle()
     }
 
     override func willActivate() {

@@ -19,6 +19,7 @@
 		833385691CD293890084FF02 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833385681CD293890084FF02 /* InterfaceController.swift */; };
 		8333856B1CD293890084FF02 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8333856A1CD293890084FF02 /* ExtensionDelegate.swift */; };
 		8333856D1CD293890084FF02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8333856C1CD293890084FF02 /* Assets.xcassets */; };
+		F99757591CD3A63100619C7C /* WinInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99757581CD3A63100619C7C /* WinInterfaceController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		8333856A1CD293890084FF02 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		8333856C1CD293890084FF02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8333856E1CD293890084FF02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F99757581CD3A63100619C7C /* WinInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WinInterfaceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 				8333856A1CD293890084FF02 /* ExtensionDelegate.swift */,
 				8333856C1CD293890084FF02 /* Assets.xcassets */,
 				8333856E1CD293890084FF02 /* Info.plist */,
+				F99757581CD3A63100619C7C /* WinInterfaceController.swift */,
 			);
 			path = "LightsOut WatchKit Extension";
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8333856B1CD293890084FF02 /* ExtensionDelegate.swift in Sources */,
+				F99757591CD3A63100619C7C /* WinInterfaceController.swift in Sources */,
 				833385691CD293890084FF02 /* InterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -532,6 +536,7 @@
 				833385731CD293890084FF02 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		833385751CD293890084FF02 /* Build configuration list for PBXNativeTarget "LightsOut WatchKit App" */ = {
 			isa = XCConfigurationList;
@@ -540,6 +545,7 @@
 				833385771CD293890084FF02 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		833385791CD293890084FF02 /* Build configuration list for PBXNativeTarget "LightsOut" */ = {
 			isa = XCConfigurationList;
@@ -548,6 +554,7 @@
 				8333857B1CD293890084FF02 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
