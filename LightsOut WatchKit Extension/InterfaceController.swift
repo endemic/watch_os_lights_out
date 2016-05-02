@@ -87,7 +87,7 @@ class InterfaceController: WKInterfaceController {
 
         // Reverse polarity of neighbors
         for neighborIndex in [index - gridSize, index - 1, index + 1, index + gridSize] {
-            if neighborIndex >= state.startIndex && neighborIndex < state.endIndex {
+            if validNeighbor(index, other: neighborIndex) {
                 swapPolarity(neighborIndex)
             }
         }
@@ -99,6 +99,20 @@ class InterfaceController: WKInterfaceController {
             resetState()
             generateRandomPuzzle()
         }
+    }
+
+    func validNeighbor(index: Int, other: Int) -> Bool {
+        var valid = false
+
+        if other >= state.startIndex && other < state.endIndex {
+            valid = true
+        }
+
+        if abs(index - other) == 1 {
+            valid = index / gridSize == other / gridSize
+        }
+
+        return valid
     }
 
     func swapPolarity(index: Int) {
