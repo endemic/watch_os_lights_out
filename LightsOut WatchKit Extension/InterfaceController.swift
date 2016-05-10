@@ -102,14 +102,14 @@ class InterfaceController: WKInterfaceController {
     }
 
     func validNeighbor(index: Int, other: Int) -> Bool {
-        var valid = false
-
-        if other >= state.startIndex && other < state.endIndex {
-            valid = true
-        }
+        var valid = true
 
         if abs(index - other) == 1 {
             valid = index / gridSize == other / gridSize
+        }
+
+        if other < state.startIndex || other >= state.endIndex {
+            valid = false
         }
 
         return valid
